@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +27,6 @@ class MyCounter extends StatefulWidget {
 }
 
 class _MyCounterState extends State<MyCounter> {
-  
   int counter = 0;
 
   @override
@@ -39,19 +36,25 @@ class _MyCounterState extends State<MyCounter> {
         title: const Text("My First Page"),
       ),
       body: Container(
-          alignment: Alignment.center,
-          color: Colors.green,
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [const Text('This is body'), Text(counter.toString())],
-          )),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        setState(() {
-          counter++;
-        });
-        print(counter);
-      }),
+        alignment: Alignment.center,
+        color: Colors.green,
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('This is body'),
+            Text(counter.toString()),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            counter++;
+          });
+          print(counter);
+        },
+      ),
     );
   }
 }
